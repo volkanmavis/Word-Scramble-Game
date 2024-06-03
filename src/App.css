@@ -1,0 +1,194 @@
+/* App.css */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.word-app {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 80px;
+}
+
+.heading-container {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.heading {
+    content: attr("Welcome to Word App");
+    font-family: sans-serif;
+    width: 100%;
+    height: 7%;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 2px solid black;
+    animation: typing 3s steps(19), cursor .4s step-end infinite forwards;
+}
+
+@keyframes cursor {
+    50% {
+        border-color: transparent;
+    }
+}
+
+@keyframes typing {
+    0% {
+        width: 0;
+    }
+    50% {
+        width: 100%;
+    }
+}
+
+.message-container {
+    margin-top: 20px;
+    position: absolute;
+    font-size: 35px;
+    background-color: rgb(250, 227, 199);
+}
+
+.board {
+    margin-top: 100px;
+    font-size: 50px;
+    position: absolute;
+}
+
+.letter-box {
+    width: 60px;
+    height: 60px;
+    border: 0.5px solid black;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    margin: 5px;
+    background-color: #edc3c2;
+    border-radius: 10px;
+}
+
+.scrambled-word {
+    margin-top: 240px;
+    font-size: 40px;
+    position: absolute;
+}
+
+.content {
+    width: 900px;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-top: 0.5px solid black;
+    border-bottom: 0.5px solid black;
+    margin: 50px;
+}
+
+.app-input {
+    width: 400px;
+    height: 70px;
+    font-size: 30px;
+    margin-top: 300px;
+    border-radius: 50px;
+    padding: 5px;
+    background-color: #eee;
+    border: none;
+    color: lightcoral;
+    box-shadow: 0 0.4rem #dfd9d9;
+    cursor: pointer;
+}
+
+.enter-button {
+    --primary: 255, 90, 120;
+  --secondary: 150, 50, 60;
+  width: 60px;
+  height: 50px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  user-select: none;
+  touch-action: manipulation;
+  outline: 10px solid rgb(var(--primary), .5);
+  border-radius: 100%;
+  position: relative;
+  transition: .3s;
+  margin-left: 20px;
+}
+.back-enter{
+    background: rgb(var(--secondary));
+  border-radius: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+.front-enter{
+    background: linear-gradient(0deg, rgba(var(--primary), .6) 20%, rgba(var(--primary)) 50%);
+  box-shadow: 0 .5em 1em -0.2em rgba(var(--secondary), .5);
+  border-radius: 100%;
+  position: absolute;
+  border: 1px solid rgb(var(--secondary));
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+  font-weight: 600;
+  font-family: inherit;
+  transform: translateY(-15%);
+  transition: .15s;
+  color: rgb(var(--secondary));
+}
+.enter-button:active .front-enter{
+    transform: translateY(0%);
+    box-shadow: 0 0;
+}
+
+.start-button-new {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 6px 12px;
+    gap: 8px;
+    height: 50px;
+    width: 200px;
+    border: none;
+    background: #ff362b34;
+    border-radius: 20px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.label {
+    line-height: 20px;
+    font-size: 17px;
+    color: #FF342B;
+    font-family: sans-serif;
+    letter-spacing: 1px;
+}
+
+.start-button-new:hover {
+    background: #ff362b52;
+}
+
+.start-button-new:hover .svg-icon {
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(-360deg);
+    }
+}
